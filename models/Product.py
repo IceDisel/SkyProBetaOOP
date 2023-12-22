@@ -5,17 +5,6 @@ class Product:
     """
     Класс, представляющий продукт.
     """
-    name_product: str
-    """Название продукта."""
-
-    description_product: str
-    """Описание продукта."""
-
-    price: float
-    """Цена продукта."""
-
-    quantity_in_stock: int
-    """Количество продукта на складе."""
 
     def __init__(self, name_product: str, description_product: str, price: float, quantity_in_stock: int) -> None:
         """
