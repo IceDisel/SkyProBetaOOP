@@ -25,7 +25,7 @@ class Category:
         Category.total_categories += 1
 
     @property
-    def products_list(self):
+    def products_list(self) -> list:
         tmp_list = []
         for product in self.__products:
             if product:
@@ -33,5 +33,5 @@ class Category:
         return tmp_list
 
     @products_list.setter
-    def products_list(self, product):
+    def products_list(self, product) -> None:
         self.__products.append(product)
