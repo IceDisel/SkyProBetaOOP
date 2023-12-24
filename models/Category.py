@@ -26,6 +26,10 @@ class Category:
 
     @property
     def products_list(self) -> list:
+        """
+        Метод вывода товаров по шаблону
+        :return: list
+        """
         tmp_list = []
         for product in self.__products:
             if product:
@@ -34,4 +38,9 @@ class Category:
 
     @products_list.setter
     def products_list(self, product) -> None:
+        """
+        Метод сеттер добавление продуктов в список
+        :param product: объект экземпляра класса Product
+        :return: None
+        """
         self.__products.append(product)
