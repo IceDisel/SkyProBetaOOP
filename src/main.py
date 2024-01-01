@@ -1,4 +1,4 @@
-from models.Category import Category
+from models.Category import Category, ProductsFromCategory
 from models.Product import Product
 from src.functions import read_json_file
 from src.settings import PATH_JSON
@@ -16,40 +16,22 @@ def main() -> None:
     category.products_list = product2
     category.products_list = product1
 
-    product2.price = 140_000
+    print("""Задание 1
+Для класса Product добавить строковое отображение""")
+    print(product1)
 
-    print(f"Категория: {category.name_category}")
-    print(f"Описание: {category.description_category}")
-    print("Товары:")
-    for product in category.products_list:
-        print(f" - {product}")
+    print("""\nДля класса Category добавить строковое отображение""")
+    print(category)
 
-    print(f"\n- Количество категорий - {category.total_categories}")
-    print(f"- Количество уникальных товаров - {category.total_unique_products}")
+    print("""\nЗадание 2
+Для класса Product необходимо добавить возможность складывать объекты между собой""")
+    print(product1 + product2)
 
-    print("------------------------------------------")
-    print("\nДанные о товара загружены из json")
+    print("""\n* Дополнительное задание""")
 
-    data = read_json_file(PATH_JSON)
-
-    list_category = []
-    for item in data:
-        list_category.append(Category(item['name'], item['description']))
-        for item_product in item['products']:
-            list_category[-1].products_list = Product(item_product['name'], item_product['description'],
-                                                      item_product['price'],
-                                                      item_product['quantity'])
-
-    for item in list_category:
-        print(f"\nКатегория: {item.name_category}")
-        print(f"Описание: {item.description_category}")
-        print("Товары:")
-
-        for product in item.products_list:
-            print(f" - {product}")
-
-    print(f"\n- Количество категорий - {category.total_categories}")
-    print(f"- Количество уникальных товаров - {category.total_unique_products}")
+    pr = ProductsFromCategory(category)
+    for item in pr:
+        print(item)
 
 
 if __name__ == '__main__':
