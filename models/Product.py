@@ -20,6 +20,21 @@ class Product:
         self.quantity_in_stock = quantity_in_stock
         Category.total_unique_products += 1
 
+    def __add__(self, other):
+        """
+        Сложение объектов между собой
+        :param other:
+        :return:
+        """
+        return self.__price * self.quantity_in_stock + other.__price * other.quantity_in_stock
+
+    def __str__(self):
+        """
+        Строковое отображение количества продукта
+        :return:
+        """
+        return f"{self.name_product}, {self.__price} руб. Остаток: {self.quantity_in_stock} шт."
+
     @property
     def price(self) -> float:
         """
