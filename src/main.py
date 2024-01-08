@@ -1,11 +1,25 @@
 from models.Category import Category, ProductsFromCategory
+from models.LawnGrass import LawnGrass
 from models.Product import Product
+from models.Smartphone import Smartphone
 from src.functions import read_json_file
 from src.settings import PATH_JSON
 
 
 # Данный код является для проверки программы!!!
 def main() -> None:
+    smart1 = Smartphone("Смартфон Samsung Galaxy S23 Ultra 5G", "Мощный сотовый телефон с хорошей камерой",
+                        124_990, 7, "Snapdragon 8 Gen 2 for Galaxy", "SM-S918B",
+                        "оперативная 12 ГБ, встроенная 512 ГБ", "черный фантом")
+    print(smart1)
+
+    grass1 = LawnGrass("Низкорослый газон Greenlab 4 кг", "Газонная трава способствует очищению воздуха от токсинов",
+                       2384, 70, "Германия", "на 5-й день", "зеленый")
+
+    print(grass1)
+
+    print("\n====================================")
+
     category = Category("Электроника", "Компьютерная электроника и сотовые телефоны")
 
     product1 = Product("Смартфон Samsung Galaxy Note 9", "Мощный сотовый телефон с хорошей камерой",
