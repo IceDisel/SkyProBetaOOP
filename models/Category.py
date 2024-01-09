@@ -61,7 +61,13 @@ class Category:
         :param product: объект экземпляра класса Product
         :return: None
         """
-        self.__products.append(product)
+        from models.Product import Product  # Не знаю правильно ли, иначе я получаю цикличный импорт.
+        try:
+            if not isinstance(product, Product):
+                raise TypeError("Нельзя добавить объект не принадлежащему классу Product или наследников класса")
+            self.__products.append(product)
+        except TypeError as e:
+            str(e)  # Не пойму что надо написать после строчки except
 
 
 class ProductsFromCategory:
