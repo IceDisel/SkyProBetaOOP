@@ -20,15 +20,20 @@ class Product:
         self.quantity_in_stock = quantity_in_stock
         Category.total_unique_products += 1
 
-    def __add__(self, other):
+    def __add__(self, other) -> str | int | float:
         """
         Сложение объектов между собой
         :param other:
         :return:
         """
-        return self.__price * self.quantity_in_stock + other.__price * other.quantity_in_stock
+        try:
+            if type(self) is not type(other):  # if not isinstance(other, type(self)):
+                raise TypeError("Невозможно выполнить сложение с разными типами")
+            return self.__price * self.quantity_in_stock + other.__price * other.quantity_in_stock
+        except TypeError as e:
+            return str(e)
 
-    def __str__(self):
+    def __str__(self) -> str:
         """
         Строковое отображение количества продукта
         :return:
