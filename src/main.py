@@ -32,7 +32,7 @@ def main() -> None:
 
     print(product2 + grass1)
     print(smart1 + grass1)
-    print(type(product1 + product2))
+    print(product1 + product2)
     print(product1 + smart1)
 
     print("\n====================================")

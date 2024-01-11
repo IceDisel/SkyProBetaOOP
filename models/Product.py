@@ -27,7 +27,8 @@ class Product:
         :return:
         """
         try:
-            if type(self) is not type(other):  # if not isinstance(other, type(self)):
+            if not isinstance(other, self.__class__):
+                # if type(self) is not type(other):  # if not isinstance(other, type(self)):
                 raise TypeError("Невозможно выполнить сложение с разными типами")
             return self.__price * self.quantity_in_stock + other.__price * other.quantity_in_stock
         except TypeError as e:
