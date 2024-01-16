@@ -9,60 +9,13 @@ pytest --cov
 #### Пример работы программы
 
 ```text
-Задание 1
-Создать два класса наследуясь от Product
+[Создан объект Smartphone - {'name_product': 'Смартфон Samsung Galaxy S23 Ultra 5G', 'description_product': 'Мощный сотовый телефон с хорошей камерой', '_Product__price': 124990, 'quantity_in_stock': 7, 'performance': 'Snapdragon 8 Gen 2 for Galaxy', 'model': 'SM-S918B', 'memory': 'оперативная 12 ГБ, встроенная 512 ГБ', 'color': 'черный фантом'}, Создан объект LawnGrass - {'name_product': 'Низкорослый газон Greenlab 4 кг', 'description_product': 'Газонная трава способствует очищению воздуха от токсинов', '_Product__price': 2384, 'quantity_in_stock': 70, 'manufacturer_country': 'Германия', 'germination_period': 'на 5-й день', 'color': 'зеленый'}, Создан объект Product - {'name_product': 'Смартфон Samsung Galaxy Note 9', 'description_product': 'Мощный сотовый телефон с хорошей камерой', '_Product__price': 90000, 'quantity_in_stock': 11}, Создан объект Product - {'name_product': 'Ноутбук Acer Nitro 5', 'description_product': 'Игровой ноутбук с экраном 144Hz', '_Product__price': 150000, 'quantity_in_stock': 3}]
+==================
+Создан объект Smartphone - {'name_product': 'Смартфон Samsung Galaxy S23 Ultra 5G', 'description_product': 'Мощный сотовый телефон с хорошей камерой', '_Product__price': 124990, 'quantity_in_stock': 7, 'performance': 'Snapdragon 8 Gen 2 for Galaxy', 'model': 'SM-S918B', 'memory': 'оперативная 12 ГБ, встроенная 512 ГБ', 'color': 'черный фантом'}
+Создан объект LawnGrass - {'name_product': 'Низкорослый газон Greenlab 4 кг', 'description_product': 'Газонная трава способствует очищению воздуха от токсинов', '_Product__price': 2384, 'quantity_in_stock': 70, 'manufacturer_country': 'Германия', 'germination_period': 'на 5-й день', 'color': 'зеленый'}
+Создан объект Product - {'name_product': 'Смартфон Samsung Galaxy Note 9', 'description_product': 'Мощный сотовый телефон с хорошей камерой', '_Product__price': 90000, 'quantity_in_stock': 11}
+Создан объект Product - {'name_product': 'Ноутбук Acer Nitro 5', 'description_product': 'Игровой ноутбук с экраном 144Hz', '_Product__price': 150000, 'quantity_in_stock': 3}
 
-Смартфон Samsung Galaxy S23 Ultra 5G, 124990 руб. Остаток: 7 шт.
-Низкорослый газон Greenlab 4 кг, 2384 руб. Остаток: 70 шт.
+Process finished with exit code 0
 
-====================================
-
-Задание 2
-Доработать функционал сложения, чтобы можно было складывать товары только из одинаковых классов продуктов.
-
-Невозможно выполнить сложение с разными типами
-Невозможно выполнить сложение с разными типами
-<class 'int'>
-Невозможно выполнить сложение с разными типами
-
-====================================
-
-Задание 3
-Доработайте метод добавления продукта в категорию таким образом,
-чтобы не было возможности добавить вместо продукта или его наследников любой другой объект.
-
-Ноутбук Acer Nitro 5, 150000 руб. Остаток: 3
-Смартфон Samsung Galaxy Note 9, 90000 руб. Остаток: 11
-Смартфон Samsung Galaxy S23 Ultra 5G, 124990 руб. Остаток: 7
-Низкорослый газон Greenlab 4 кг, 2384 руб. Остаток: 70
-```
-
-#### Пример выполненных тестов
-```text
-=========================================================== test session starts ===========================================================
-platform win32 -- Python 3.10.9, pytest-7.4.3, pluggy-1.3.0
-rootdir: D:\Project\Python\SkyProBetaOOP                   
-plugins: cov-4.1.0                                         
-collected 3 items
-
-tests\test_Category.py .                                                                                                          [ 33%]
-tests\test_Product.py .                                                                                                           [ 66%]
-tests\test_functions.py .                                                                                                         [100%]
-
----------- coverage: platform win32, python 3.10.9-final-0 -----------
-Name                      Stmts   Miss  Cover                         
----------------------------------------------                         
-models\Category.py           22      6    73%                         
-models\Product.py            24      9    62%                         
-models\__init__.py            0      0   100%                         
-src\__init__.py               0      0   100%                         
-src\functions.py              5      0   100%
-tests\__init__.py             0      0   100%
-tests\test_Category.py        9      0   100%
-tests\test_Product.py        12      0   100%
-tests\test_functions.py      11      0   100%
----------------------------------------------
-TOTAL                        83     15    82%
-
-============================================================ 3 passed in 0.09s ============================================================ 
 ```
