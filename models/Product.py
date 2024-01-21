@@ -100,4 +100,10 @@ class Product(AbstractProduct, ReportMixin):
         :param quantity_in_stock: Количество продукта на складе.
         :return: Экземпляр класса Product
         """
-        return Product(name_product, description_product, price, quantity_in_stock)
+        try:
+            if quantity_in_stock <= 0:
+                raise ValueError
+        except ValueError:
+            print("Товар с нулевым количеством не может быть добавлен")
+        else:
+            return Product(name_product, description_product, price, quantity_in_stock)

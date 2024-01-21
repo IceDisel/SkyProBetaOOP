@@ -42,6 +42,24 @@ class Category:
                 sum_quantity_in_stock += product.quantity_in_stock
         return sum_quantity_in_stock
 
+    def average_price_products(self) -> str:
+        """
+        Метод подсчитывает средний ценник всех товаров.
+        :return: Средний ценник всех товаров =
+        """
+        quantity_goods, sum_price, average_price = 0, 0, ""
+        for product in self.__products:
+            if product:
+                sum_price += product.price * product.quantity_in_stock
+                quantity_goods += product.quantity_in_stock
+
+        try:
+            average_price = f"Средний ценник всех товаров = {round(sum_price / quantity_goods, 2)}"
+        except ZeroDivisionError:
+            average_price = f"Средний ценник всех товаров = 0"
+
+        return average_price
+
     @property
     def products_list(self) -> list:
         """
@@ -66,8 +84,8 @@ class Category:
             if not isinstance(product, Product):
                 raise TypeError("Нельзя добавить объект не принадлежащему классу Product или наследников класса")
             self.__products.append(product)
-        except TypeError as e:
-            str(e)  # Не пойму что надо написать после строчки except
+        except TypeError:
+            pass
 
 
 class ProductsFromCategory:
