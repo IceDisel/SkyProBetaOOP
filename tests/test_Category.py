@@ -36,8 +36,8 @@ def test_average_price_products(category_electronics: Category) -> None:
     :param category_electronics:
     :return: None
     """
-    assert category_electronics.average_price_products() == "Средний ценник всех товаров = 0"
+    assert category_electronics.average_price_products() == 0
 
     category_electronics.products_list = smart1
     category_electronics.products_list = grass1
-    assert category_electronics.average_price_products() == "Средний ценник всех товаров = 13530.0"
+    assert category_electronics.average_price_products() == 13530.0
