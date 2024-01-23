@@ -35,7 +35,8 @@ class Product(AbstractProduct, ReportMixin):
         :param price: Цена продукта.
         :param quantity_in_stock: Количество продукта на складе.
         """
-
+        if quantity_in_stock <= 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.name_product = name_product
         self.description_product = description_product
         self.__price = price
@@ -100,10 +101,4 @@ class Product(AbstractProduct, ReportMixin):
         :param quantity_in_stock: Количество продукта на складе.
         :return: Экземпляр класса Product
         """
-        try:
-            if quantity_in_stock <= 0:
-                raise ValueError
-        except ValueError:
-            print("Товар с нулевым количеством не может быть добавлен")
-        else:
-            return Product(name_product, description_product, price, quantity_in_stock)
+        return Product(name_product, description_product, price, quantity_in_stock)

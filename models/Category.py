@@ -42,7 +42,7 @@ class Category:
                 sum_quantity_in_stock += product.quantity_in_stock
         return sum_quantity_in_stock
 
-    def average_price_products(self) -> str:
+    def average_price_products(self) -> int | float:
         """
         Метод подсчитывает средний ценник всех товаров.
         :return: Средний ценник всех товаров =
@@ -54,9 +54,9 @@ class Category:
                 quantity_goods += product.quantity_in_stock
 
         try:
-            average_price = f"Средний ценник всех товаров = {round(sum_price / quantity_goods, 2)}"
+            average_price = round(sum_price / quantity_goods, 2)
         except ZeroDivisionError:
-            average_price = f"Средний ценник всех товаров = 0"
+            average_price = 0
 
         return average_price
 

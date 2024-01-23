@@ -15,14 +15,12 @@ def main() -> None:
 
     product1 = Product("Смартфон Samsung Galaxy Note 9", "Мощный сотовый телефон с хорошей камерой",
                        90_000, 11)
-    product2 = Product.add_product("Ноутбук Acer Nitro 5", "Игровой ноутбук с экраном 144Hz",
-                                   150_000, 0)
 
     category = Category("Электроника", "Компьютерная электроника и сотовые телефоны")
 
     category.products_list = smart1
     category.products_list = grass1
-    # category.products_list = product1
+    category.products_list = product1
     # category.products_list = product2
 
     print(category.average_price_products())
@@ -30,6 +28,9 @@ def main() -> None:
     category1 = Category("Автомобили", "Автомобили с пробегом")
 
     print(category1.average_price_products())
+
+    product2 = Product.add_product("Ноутбук Acer Nitro 5", "Игровой ноутбук с экраном 144Hz",
+                                   150_000, 0)
 
 
 if __name__ == '__main__':

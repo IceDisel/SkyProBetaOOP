@@ -9,10 +9,19 @@ pytest --cov
 #### Пример работы программы
 
 ```text
-Товар с нулевым количеством не может быть добавлен
-Средний ценник всех товаров = 13530.0
-Средний ценник всех товаров = 0
+23088.75
+0
+Traceback (most recent call last):
+  File "D:\Project\Python\SkyProBetaOOP\src\main.py", line 37, in <module>
+    main()
+  File "D:\Project\Python\SkyProBetaOOP\src\main.py", line 32, in main
+    product2 = Product.add_product("Ноутбук Acer Nitro 5", "Игровой ноутбук с экраном 144Hz",
+  File "D:\Project\Python\SkyProBetaOOP\models\Product.py", line 104, in add_product
+    return Product(name_product, description_product, price, quantity_in_stock)
+  File "D:\Project\Python\SkyProBetaOOP\models\Product.py", line 39, in __init__
+    raise ValueError("Товар с нулевым количеством не может быть добавлен")
+ValueError: Товар с нулевым количеством не может быть добавлен
 
-Process finished with exit code 0
+Process finished with exit code 1
 
 ```
